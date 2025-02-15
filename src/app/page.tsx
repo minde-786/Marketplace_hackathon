@@ -5,18 +5,17 @@ import Image from 'next/image'
 import { Car } from "../../type/product";
 import Link from 'next/link';
 import Cars from './../components/car';
+import LoginPage from '@/components/login';
+import AuthGuard from '@/components/AuthGuard';
 
 
 function page() {
 
 
 
-
-
-
-
   return (
     <div className='  bg-slate-200  border border-slate-100 shadow-2xl h- '>
+
       <div className=' lg:grid grid-cols-2  gap-7 py-4 mr-6 mx-4  '>
       <h1 className='bg-blue-400 lg:w-[580px] lg:h-[320px] py-[32px] px-[64] rounded-md mx-5 '>
         <p className='text-2xl text-white px-4 text-pretty'>The Best Platform <br></br>for Car Rental</p>

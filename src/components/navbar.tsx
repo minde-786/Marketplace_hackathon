@@ -8,6 +8,7 @@ import { Search } from 'lucide-react';
 import Image from 'next/image';
 import { AlignJustify } from 'lucide-react';
 import Link from 'next/link';
+import { ClerkProvider, SignedIn, SignedOut, SignInButton, SignOutButton, SignUpButton, UserButton } from '@clerk/nextjs';
 
 function Navbar() {
   return (
@@ -25,17 +26,25 @@ function Navbar() {
   <TextSearch />
 </h1>
 
-<h2 className='hidden lg:grid grid-cols-4 py-4 mx-5 ml-2 gap-36 '> 
+<h2 className=' grid grid-cols-4 py-4 mx-5 ml-2 gap-36 '> 
       <Heart 
-     className='border border-gray-100 rounded-full py-1 px-1 mt-2 shadow-md'/> 
-     <Bell className='border border-gray-100 mt-2 rounded-full py-1 px-1 '/> 
-     <Link href='/graph'>  <Settings className='border border-gray-100  mt-2 rounded-full py-1 px-1 shadow-md'/></Link></h2>
-<Link href='/graph'>
-<Image
+     className='hidden sm:block   border border-gray-100 rounded-full py-1 px-1 mt-2 shadow-md'/> 
+     <Bell className='hidden sm:block  border border-gray-100 mt-2 rounded-full py-1 px-1 '/> 
+     <Link href='/graph'>  <Settings className='border border-gray-100  mt-2 rounded-full py-1 px-1 shadow-md'/></Link>  </h2>
+
+{/* <Image
  src='/mm.png'
      alt='profile' width={40} height={40}
      className='mb-1 py-4 ml-48 lg:ml-60 '
-     /></Link>
+     /> */} <p className='pl-60 mt-5'>
+        <SignedOut >
+              <SignInButton  mode='modal'  /> 
+              {/* <SignUpButton  mode='modal'/>  */}
+            </SignedOut>
+            <SignedIn >
+              <UserButton /> 
+            </SignedIn></p>
+          
      
       </div> 
     

@@ -3,7 +3,7 @@ import React from 'react'
 
 import Image from 'next/image'
 import { Booking } from '../../../type/product'
-import BookingCard from '../../components/login'
+import BookingCard from '../../components/rent'
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Rental info",
@@ -11,7 +11,9 @@ export const metadata: Metadata = {
 };
 import Link from 'next/link'
 
+
 function Rentalinfo() {
+  
     
   const Booking : Booking[] = [
     {
@@ -42,26 +44,29 @@ function Rentalinfo() {
 
 
   ]
-  return (
+  return ( 
     <div className='bg-slate-100 mx-1 rounded shadow-md '>
+      
 <div className='md:flex justify-around mx-2 gap-5  '>
 <div className='bg-white mt-3'>
 <h1 className='font-bold py-4 px-3'>Billing Info</h1>
 <h2 className='flex justify-between'><p className='text-xs text-slate-600 px-3 '>Please enter your billing info</p> <p className='text-slate-400 px-2'>1 of 4</p></h2>
 <div className='md:grid grid-cols-2 gap-2'>
   <h1 className='py-5' >
-    <p className='font-semibold mx-3'>Name</p>
+    <p className='font-semibold mx-3'>FullName</p>
     <input
     type='text'
     placeholder='Your name'
-    className=' rounded py-2 mt-3  mx-3 md:w-96 px-2 border border-slate-200 bg-slate-100  shadow-lg'/>
+    className=' rounded py-2 mt-3  mx-3 md:w-96 px-2 border border-slate-200 bg-slate-100  shadow-lg' />
+
   </h1>
   <h1>
     <p className='font-semibold py-3'>PhoneNumber</p>
     <input
     type='text'
     placeholder='Phone number'
-    className='rounded py-2 mt-3  mx-3 md:w-96 px-2 border border-slate-200  bg-slate-100  shadow-lg' />
+    className='rounded py-2 mt-3  mx-3 md:w-96 px-2 border border-slate-200  bg-slate-100  shadow-lg'  />
+   
   </h1></div>
 
 
@@ -147,7 +152,7 @@ function Rentalinfo() {
 <h2 className='flex justify-between'><p className='text-xs text-slate-500 py-2 px-4'>please enter your payment method</p><p className='text-slate-400 px-2'>3 of 4</p></h2>
 
 <div className=' py-3'>
-<h1 className='flex justify-between font-semibold pb-5'> <li>Credit Card</li> 
+<h1 className='flex justify-between font-semibold pb-5 px-2'> <li>Credit Card</li> 
 <Image
 src='/Visa.png'
 alt='card'width={92} height={20}
@@ -244,17 +249,17 @@ alt='card'width={92} height={20}
  <h1 className='flex justify-between'> <p className='font-bold mt-3 px-2'>Confirmation </p><p className='text-slate-400'>4 of 4</p></h1>
 <p className='text-xs text-slate-400 py-2 px-2'>We are getting to the end. Just few clicks and your rental is ready!</p>
 
-<h1><input
+<h1 className='px-2'><input
               type="checkbox"
 
                className="mr-2 w-5 h-5 text-blue-600"
             /><span className='text-sm'>I agree with sending an Marketing and newsletter emails. No spam, promissed!</span>
 </h1>
-<h1><input
+<h1 className='px-2'><input
               type="checkbox"
-              className="mr-2 w-5 h-5 text-blue-600"
+              className="mr-2 w-5 h-5 text-blue-600 "
             /><span className='text-sm'>I agree with our terms and conditions and privacy policy.</span></h1>
-          <Link href='/Billing'>  <button className='mt-4 bg-blue-600 py-1 px-2 mb-6 rounded-md '>Rent Now</button></Link>
+          <Link href='/Billing'>  <button className='mt-4 bg-blue-600 py-1 px-2 ml-2 mb-6 rounded-md '>Rent Now</button></Link>
             
 </div>
 <Image
@@ -275,7 +280,6 @@ className='mt-3'/></h1></div>
 
 
 
-
 </div>
 )
 
@@ -284,4 +288,8 @@ className='mt-3'/></h1></div>
 }
 
 export default Rentalinfo
+
+function useForm(): { register: any; handleSubmit: any; formState: {}; } {
+  throw new Error('Function not implemented.');
+}
 
